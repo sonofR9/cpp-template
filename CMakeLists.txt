@@ -4,7 +4,7 @@ if (${CMAKE_VERSION} VERSION_GREATER "3.24")
     cmake_policy(SET CMP0135 OLD)
 endif()
 
-project( VERSION 0.1.0)
+project(VERSION 0.1.0)
 
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
@@ -25,7 +25,16 @@ option(ENABLE_SANITIZER "Set to \"ON\" to enable sanitizer in debug build" OFF)
 
 include(cmake/apply_options.cmake)
 
-add_subdirectory(${UTILS_DIR})
+# TODO(novak) so versioned
+
+if (${CMAKE_VERSION} VERSION_GREATER "3.28")
+# modules example (>=.28)
+# target_sources(foo
+# PUBLIC
+# FILE_SET CXX_MODULES FILES
+#   foo.cxx
+# )
+endif()
 
 add_subdirectory(src)
 

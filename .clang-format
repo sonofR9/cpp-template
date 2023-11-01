@@ -29,7 +29,6 @@ BraceWrapping:
   AfterFunction : 'false'
   AfterNamespace : 'false'
   AfterStruct : 'true'
-  AfterCaseLabel : 'false'
   AfterUnion : 'false'
   AfterExternBlock : 'false'
   BeforeCatch : 'false'
