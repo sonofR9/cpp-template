@@ -1,7 +1,8 @@
 Checks: >
   *,
   -android-*,
-  -fuchsia-*
+  -altera-*,
+  -fuchsia-*,
   -linuxkernel*,
   -llvm*,
   -openmp-*,
