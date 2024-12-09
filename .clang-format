@@ -10,7 +10,7 @@ MaxEmptyLinesToKeep: 1
 KeepEmptyLinesAtTheStartOfBlocks: false
 KeepEmptyLinesAtEOF: false
 InsertNewlineAtEOF: true
-SeparateDefinitionBlocks: Leave # other values break MaxEmptyLinesToKeep
+SeparateDefinitionBlocks: Always # other values break MaxEmptyLinesToKeep
 
 TabWidth: 8
 UseTab: Never
@@ -18,10 +18,8 @@ UseTab: Never
 ReflowComments: true
 NamespaceIndentation: None
 
-
-
 AlignAfterOpenBracket: Align
-AlignArrayOfStructures: Right
+AlignArrayOfStructures: None
 
 AlignConsecutiveAssignments:
   Enabled: false
@@ -54,7 +52,6 @@ AlignConsecutiveShortCaseStatements:
 AlignEscapedNewlines: Left
 AlignOperands: Align
 
-
 SpacesBeforeTrailingComments: 2
 
 AlignTrailingComments:
@@ -65,12 +62,12 @@ AllowAllArgumentsOnNextLine: true
 AllowAllParametersOfDeclarationOnNextLine: true
 #AllowBreakBeforeNoexceptSpecifier: Never
 AllowShortBlocksOnASingleLine: Empty
-AllowShortCaseLabelsOnASingleLine: false
+AllowShortCaseLabelsOnASingleLine: true
 AllowShortEnumsOnASingleLine: false
 AllowShortFunctionsOnASingleLine: All
 AllowShortIfStatementsOnASingleLine: Never
 
-AllowShortLambdasOnASingleLine: None
+AllowShortLambdasOnASingleLine: All
 LambdaBodyIndentation: Signature
 
 AllowShortLoopsOnASingleLine: false
@@ -106,7 +103,7 @@ BraceWrapping:
 
 BracedInitializerIndentWidth: 4
 BreakAfterAttributes: Leave
-BreakBeforeBinaryOperators: None
+BreakBeforeBinaryOperators: NonAssignment
 BreakBeforeConceptDeclarations: Always
 BreakBeforeInlineASMColon: OnlyMultiline
 BreakBeforeTernaryOperators: true
@@ -119,7 +116,6 @@ BreakConstructorInitializers: AfterColon
 PackConstructorInitializers: Never
 ConstructorInitializerIndentWidth: 4
 
-
 ContinuationIndentWidth: 8
 Cpp11BracedListStyle: true
 DerivePointerAlignment: false
@@ -131,7 +127,7 @@ ExperimentalAutoDetectBinPacking: false
 ShortNamespaceLines: 5
 FixNamespaceComments: true
 
-ForEachMacros: ['FOREACH']
+ForEachMacros: ["FOREACH"]
 
 SortIncludes: CaseInsensitive
 #IncludeIsMainSourceRegex: '$'
@@ -144,24 +140,23 @@ IncludeCategories:
   #   Priority: 100
   #   SortPriority: 100
 
-    # gtest headers
-  - Regex:           '^((<|")(gtest|gmock))'
-    Priority:        6
+  # gtest headers
+  - Regex: '^((<|")(gtest|gmock))'
+    Priority: 6
   # boost headers
-  - Regex:           '^(<boost)'
-    Priority:        5
+  - Regex: "^(<boost)"
+    Priority: 5
   # Qt headers
-  - Regex:           '^(<(Q|qt))'
-    Priority:        4
+  - Regex: "^(<(Q|qt))"
+    Priority: 4
   # Headers in <> without extension
-  - Regex:           '<([A-Za-z0-9\Q/-_\E])+>'
-    Priority:        7
-  - Regex:           '.*>'
-    Priority:        2
+  - Regex: '<([A-Za-z0-9\Q/-_\E])+>'
+    Priority: 7
+  - Regex: ".*>"
+    Priority: 2
   # Headers in ""
-  - Regex:           '.*"'
-    Priority:        1
-
+  - Regex: '.*"'
+    Priority: 1
 
 IndentCaseBlocks: false
 IndentCaseLabels: false
@@ -188,8 +183,8 @@ IntegerLiteralSeparator:
 #MacroBlockEnd
 #Macros
 #NamespaceMacros
-StatementAttributeLikeMacros: ['emit']
-StatementMacros: ['Q_UNUSED']
+StatementAttributeLikeMacros: ["emit"]
+StatementMacros: ["Q_UNUSED"]
 #TypenameMacros
 
 PenaltyBreakAssignment: 20
@@ -207,13 +202,13 @@ PointerAlignment: Left
 ReferenceAlignment: Left
 
 QualifierAlignment: Custom
-QualifierOrder: ['friend', 'static', 'inline', 'constexpr', 'const', 'type']
+QualifierOrder: ["friend", "static", "inline", "constexpr", "const", "type"]
 
 #RawStringFormats:
 
 RemoveBracesLLVM: false
 RemoveParentheses: Leave
-RemoveSemicolon: false
+RemoveSemicolon: true
 
 IndentRequiresClause: true
 RequiresClausePosition: OwnLine
